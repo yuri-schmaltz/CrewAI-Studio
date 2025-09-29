@@ -158,6 +158,25 @@ docker-compose up --build
 
 Before running the application, ensure you update the `.env` file with your API keys and other necessary configurations. An example `.env` file is provided for reference.
 
+- `DB_URL` (optional): overrides the default SQLite database location. Use a
+  PostgreSQL URL when deploying centrally.
+- `DATABASE_ECHO` (optional): set to `true` to enable SQLAlchemy query logging
+  for troubleshooting.
+- `AGENTOPS_ENABLED` / `AGENTOPS_API_KEY`: enable and configure AgentOps
+  telemetry.
+
+## Project structure
+
+The most relevant modules are documented in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+Consult it for an overview of how the Streamlit pages, persistence layer and
+supporting utilities fit together.
+
+## Versioning
+
+The application version is tracked in [`app/__init__.py`](app/__init__.py) and
+follows semantic versioning. Increment the number whenever a pull request
+introduces meaningful changes so downstream deployments can detect updates.
+
 ## Troubleshooting
 In case of problems:
 - Delete the `venv/miniconda` folder and reinstall `crewai-studio`.
